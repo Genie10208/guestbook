@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>
+    {% for msg in message_list %}
+    <li>
+        {{ msg.publication_date }}
+        <a href="{% url 'msg_view' 'msg_id'%}">{{ msg.subject}}</a>
+            <a href="{% url 'msg_delete' 'msg.id'%}">刪除</a>
+    </li>
+</ul>
+{% endblock %}
